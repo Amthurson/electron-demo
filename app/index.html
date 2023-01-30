@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Ledeng</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+  </head>
+  <body>
+    <h3>Tray</h3>
+    The <code>tray</code> module allows you to create an icon in the
+        operating system's notification area.
+
+    <h3>Web Bluetooth API</h3>
+
+    <button id="clickme">Test Bluetooth</button>
+
+    <p>Currently selected bluetooth device: <strong id="device-name""></strong></p>
+    <div id="device-list"></div>
+
+    <h3>Dark Mode</h3>
+    <button id="toggle-dark-mode">Toggle Dark Mode</button>
+    <button id="reset-to-system">Reset to System Theme</button>
+    
+    <h3>Notification</h3>
+    <p>After launching this application, you should see the system notification.</p>
+    <p id="output">Click it to see the effect in this interface.</p>
+    <script src="./renderer.js"></script>
+  </body>
+  <style>
+    html, body {
+      background-color: transparent;
+    }
+    #device-list {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</html>
