@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Ledeng</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
   </head>
   <body>
-    <h3>Tray</h3>
-    The <code>tray</code> module allows you to create an icon in the
-        operating system's notification area.
+    <div class="container">
+      <h3 class="title">BrowserView</h3>
 
-    <h3>Web Bluetooth API</h3>
+      <button class="button open-url" url='http://43.142.146.123'>My ThreeJS Demo</button>
+      
+      <p class="description">The local react website below is a individual vite-react web project in this project.
+      </p> 
+      <p>To open it, run <code>yarn build-web</code> then <code>yarn preview-web</code>.</p>
+      <button class="button open-url" url="http://127.0.0.1:4173" target="_blank">open local react website</button>
+      <p>To develop and preview the web, run <code>dev-web</code>.</p>
+      <a href="http://127.0.0.1:5173" target="_blank">preview and develop the local react website</a>
 
-    <button id="clickme">Test Bluetooth</button>
+      <h3 class="title">Tray</h3>
+      <p>The tray module allows you to create an icon in the
+          operating system's notification area.</p>
+      <h3 class="title">Web Bluetooth API</h3>
+      <button class="button" id="clickme">Test Bluetooth</button>
 
-    <p>Currently selected bluetooth device: <strong id="device-name""></strong></p>
-    <div id="device-list"></div>
+      <p class="description">Currently selected bluetooth device: <strong id="device-name""></strong></p>
+      <div id="device-list"></div>
 
-    <h3>Dark Mode</h3>
-    <button id="toggle-dark-mode">Toggle Dark Mode</button>
-    <button id="reset-to-system">Reset to System Theme</button>
-    
-    <h3>Notification</h3>
-    <p>After launching this application, you should see the system notification.</p>
-    <p id="output">Click it to see the effect in this interface.</p>
+      <h3 class="title">Dark Mode</h3>
+      <button class="button" id="toggle-dark-mode">Toggle Dark Mode</button>
+      <button class="button" id="reset-to-system">Reset to System Theme</button>
+      
+      <h3 class="title">Notification</h3>
+      <p class="description">After launching this application, you should see the system notification.</p>
+      <p class="description" id="output">Click it to see the effect in this interface.</p>
+    </div>
     <script src="./renderer.js"></script>
   </body>
   <style>

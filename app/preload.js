@@ -1,4 +1,4 @@
-const { contextBridge, ipcRenderer,ipcMain } = require('electron')
+const { contextBridge, ipcRenderer } = require('electron')
 
 contextBridge.exposeInMainWorld('electronAPI', {
   bluetoothPairingRequest: (callback) => ipcRenderer.on('bluetooth-pairing-request', callback),
@@ -9,4 +9,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
 contextBridge.exposeInMainWorld('darkMode', {
     toggle: () => ipcRenderer.invoke('dark-mode:toggle'),
     system: () => ipcRenderer.invoke('dark-mode:system')
+});
+
+contextBridge.exposeInMainWorld('browserView', {
+    open: (url) => ipcRenderer.invoke('browser-view:open',url),
 })

@@ -9,9 +9,17 @@ document.getElementById('reset-to-system').addEventListener('click', async () =>
     document.getElementById('theme-source').innerHTML = 'System'
 });
 
-// 系统消息提示
-// const CLICK_MESSAGE = 'Bily: Bravo John! Reply when you arrived!'
-// this.notification.onclick = () => document.getElementById("output").innerText = CLICK_MESSAGE
+// 打开BrowserView
+const openUrlBtnEles = document.getElementsByClassName('open-url');
+if(openUrlBtnEles.length>0) {
+    for(let i=0;i<openUrlBtnEles.length;i++) {
+        openUrlBtnEles[i].addEventListener('click',(e)=>{
+            e.preventDefault();
+            const url = e.target.attributes.url.value;
+            window.browserView.open(url);
+        })
+    }
+}
 
 // 接收main的通知信息内容
 (async () => {
